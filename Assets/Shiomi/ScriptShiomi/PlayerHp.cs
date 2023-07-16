@@ -8,9 +8,9 @@ public class PlayerHp : MonoBehaviour
     [SerializeField] private Slider _slider = default;
 
     /// <summary>‘Ì—Í‚ÌÅ‘å’l/// </summary>
-    [SerializeField] float _maxHp = 100.0f;
+    [SerializeField] public float _maxHp = 100.0f;
     /// <summary>Œ»İ‚Ì‘Ì—Í</summary>
-    float _curentHp;
+    public float _curentHp;
     // Start is called before the first frame update
     void Start()
     {
