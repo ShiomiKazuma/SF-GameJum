@@ -33,7 +33,6 @@ public class PlayerMuzzle : MonoBehaviour
         {
             Instantiate(_waterBullet, _muzzlePos.position, Quaternion.identity);
             _timer = 0;
-            Debug.Log("”­ŽË");
         }
     }
 
