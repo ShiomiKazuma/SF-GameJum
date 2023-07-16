@@ -22,6 +22,8 @@ public class PlayerMuzzle : MonoBehaviour
         _muzzlePos = this.transform;
         //ƒvƒŒƒCƒ„[‚Ì‰Šúó‘Ô
         _playerCondition = PlayerCondition.WaterGun;
+
+        _timer = _waterGunInterval;
     }
 
     // Update is called once per frame
