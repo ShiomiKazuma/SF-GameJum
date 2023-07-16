@@ -9,6 +9,7 @@ public class EnemyGenerator : MonoBehaviour
 {
     [SerializeField] GameObject _enemyPrefab = null;
     [SerializeField, Range(0.1f, 5f)] float _interval = 3f;
+    [SerializeField] Transform[] _transform;
     float _timer;
 
     void Update()
@@ -17,7 +18,8 @@ public class EnemyGenerator : MonoBehaviour
         if (_timer > _interval)
         {
             _timer = 0;
-            Instantiate(_enemyPrefab, this.transform.position, _enemyPrefab.transform.rotation);
+            int indexPosition = Random.Range(0, _transform.Length);
+            Instantiate(_enemyPrefab, _transform[indexPosition].position, _enemyPrefab.transform.rotation);
         }
     }
 }
