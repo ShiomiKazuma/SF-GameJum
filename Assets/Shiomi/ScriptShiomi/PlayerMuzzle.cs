@@ -9,7 +9,7 @@ public class PlayerMuzzle : MonoBehaviour
     /// <summary> ƒvƒŒƒCƒ„[‚Ìó‘Ô</summary>
     public PlayerCondition _playerCondition;
     /// <summary> …“S–C‚Ì”­ËŠÔŠu</summary>
-    [SerializeField] float _waterGunInterval;
+    [SerializeField, Header ( "…“S–C‚Ì”­ËŠÔŠu")] float _waterGunInterval;
     /// <summary>…“S–C‚ÌŒ©‚½–Ú</summary>
     [SerializeField] Material _waterGunMaterial;
     [SerializeField] GameObject _waterBullet = default;
