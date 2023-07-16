@@ -18,6 +18,7 @@ public class EnemyMove : MonoBehaviour
 
     void Update()
     {
+        if(_target == null) return;
         //正面をターゲットの方向に向ける
         transform.forward = (_target.transform.position - transform.position).normalized;
         if( !_toggleGravity )
