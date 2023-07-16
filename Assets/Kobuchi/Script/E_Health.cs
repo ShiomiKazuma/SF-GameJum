@@ -13,19 +13,7 @@ public class E_Health : MonoBehaviour
         _health = _initHealth;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("‚ ‚½‚Á‚½");
-        if (collision.gameObject.tag == _bulletTag)
-        {            
-            float damage = collision.gameObject.GetComponent<Bullet>().atk;
-            Damaged(damage);
-            Destroy(collision.gameObject);
-        }
-
-    }
-
-    private void Damaged(float damage)
+    public void EnemyDamaged(float damage)
     {
         _health -= damage;
         if (_health <= 0) Destroy();
