@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1939392514786833519}
   - component: {fileID: 2884468823752374045}
   - component: {fileID: 2273048046635711093}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Capsule (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 1974721303891497977}
   - component: {fileID: 3066909168435579935}
   - component: {fileID: 2322815205516144017}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 2483964671112388562}
   - component: {fileID: 2738783609166271626}
   - component: {fileID: 2953783406360582068}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 1
   _target: {fileID: 0}
-  _toggleGravity: 1
+  _moveType: 0
 --- !u!114 &2953783406360582068
 MonoBehaviour:
   m_ObjectHideFlags: 0

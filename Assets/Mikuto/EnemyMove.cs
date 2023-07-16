@@ -8,8 +8,8 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] float _moveSpeed = 1f;
     [Tooltip("ターゲット")]
     [SerializeField] GameObject _target;
-    [Tooltip("重力を無視して移動するかのフラグ")]
-    [SerializeField] bool _toggleGravity = false;
+    [Tooltip("移動の種類")]
+    [SerializeField] MoveType _moveType = MoveType.Default;
     Rigidbody _rb;
     void Start()
     {
@@ -18,19 +18,31 @@ public class EnemyMove : MonoBehaviour
 
     void Update()
     {
-        if(_target == null) return;
+        if (_target == null) return;
         //正面をターゲットの方向に向ける
         transform.forward = (_target.transform.position - transform.position).normalized;
-        if( !_toggleGravity )
+        switch (_moveType)
         {
-            //ターゲットに向かって移動させる(重力無視)
-            _rb.velocity = (_target.transform.position - transform.position).normalized * _moveSpeed;
-        }
-        else
-        {
-            //ターゲットに向かって移動させる(重力あり)
-            Vector3 velo = (_target.transform.position - transform.position).normalized * _moveSpeed;
-            _rb.velocity = new Vector3(velo.x, _rb.velocity.y, velo.z);
+            case MoveType.Default:
+                Vector3 velo = (_target.transform.position - transform.position).normalized * _moveSpeed;
+                _rb.velocity = new Vector3(velo.x, _rb.velocity.y, velo.z);
+                break;
+            case MoveType.NoGravity:
+                _rb.velocity = (_target.transform.position - transform.position).normalized * _moveSpeed;
+                break;
+            case MoveType.Ghost:
+                float sin = Mathf.Sin(Time.time*2);
+                Vector3 velo2 = (_target.transform.position - transform.position).normalized * _moveSpeed;
+                _rb.velocity = new Vector3(velo2.x, 2*sin, velo2.z);
+                break;
         }
     }
+}
+enum MoveType
+{
+    /// <summary>重力がある状態でターゲットに向かって移動させる</summary>
+    Default,
+    /// <summary>重力を無視した状態でターゲットに向かって移動させる</summary>
+    NoGravity,
+    Ghost,
 }
