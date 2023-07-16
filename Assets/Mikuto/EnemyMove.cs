@@ -31,8 +31,9 @@ public class EnemyMove : MonoBehaviour
                 _rb.velocity = (_target.transform.position - transform.position).normalized * _moveSpeed;
                 break;
             case MoveType.Ghost:
-                float sin = Mathf.Sin(Time.time*5);
-                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                float sin = Mathf.Sin(Time.time*2);
+                Vector3 velo2 = (_target.transform.position - transform.position).normalized * _moveSpeed;
+                _rb.velocity = new Vector3(velo2.x, 2*sin, velo2.z);
                 break;
         }
     }
