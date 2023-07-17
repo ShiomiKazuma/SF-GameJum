@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMuzzle : MonoBehaviour
 {
+    [SerializeField, Header("eŒû‚ÌˆÊ’u")] GameObject _muzzle;
     /// <summary>^‚ñ’†‚ÌeŒû </summary>
     Transform _muzzlePos;
     /// <summary> ƒvƒŒƒCƒ„[‚Ìó‘Ô</summary>
@@ -11,14 +12,14 @@ public class PlayerMuzzle : MonoBehaviour
     /// <summary> …“S–C‚Ì”­ËŠÔŠu</summary>
     [SerializeField, Header ( "…“S–C‚Ì”­ËŠÔŠu")] float _waterGunInterval;
     /// <summary>…“S–C‚ÌŒ©‚½–Ú</summary>
-    [SerializeField] Material _waterGunMaterial;
-    [SerializeField] GameObject _waterBullet = default;
+    [SerializeField, Header("…“S–C‚ÌŒ©‚½–Ú")] Material _waterGunMaterial;
+    [SerializeField, Header("…“S–C‚Ì’e")] GameObject _waterBullet = default;
     Material _playerMaterial;
     /// <summary> ƒRƒ‹ƒNe‚Ì”­ËŠÔŠu</summary>
-    [SerializeField] float _corkGunInterval;
+    [SerializeField, Header("ƒRƒ‹ƒNe‚Ì”­ËŠÔŠu")] float _corkGunInterval;
     /// <summary>ƒRƒ‹ƒNe‚ÌŒ©‚½–Ú</summary>
-    [SerializeField] Material _corkGunMaterial;
-    [SerializeField] GameObject _corkBullet = default;
+    [SerializeField, Header("ƒRƒ‹ƒNe‚ÌŒ©‚½–Ú")] Material _corkGunMaterial;
+    [SerializeField, Header("ƒRƒ‹ƒNe‚Ì’e")] GameObject _corkBullet = default;
     float _timer = 0;
     int _changeCount = 0;
     
@@ -26,7 +27,7 @@ public class PlayerMuzzle : MonoBehaviour
     void Start()
     {
         //ƒ}ƒYƒ‹‚ÌˆÊ’u‚ğæ“¾
-        _muzzlePos = this.transform;
+        _muzzlePos = _muzzle.transform;
         //ƒvƒŒƒCƒ„[‚Ì‰Šúó‘Ô
         _playerCondition = PlayerCondition.WaterGun;
         //ƒvƒŒƒCƒ„[‚ÌŒ©‚½–Ú‚Ì‰Šú‰»
